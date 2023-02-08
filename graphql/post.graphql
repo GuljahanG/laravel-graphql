@@ -1,0 +1,12 @@
+extend type Query{
+    posts: [Post]! @paginate
+    postById(id:ID @eq) :Post @find
+
+}
+
+type Post{
+    id: ID,
+    title: String!
+    description: String!
+    user: User! @belongsTo
+}
